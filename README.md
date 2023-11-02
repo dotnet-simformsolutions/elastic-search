@@ -1,5 +1,5 @@
 
-![image](https://github.com/jil1710/readmedemo/assets/125335932/26a866fd-9694-465e-a445-ff87052e235e)
+![image](/images/276819133-26a866fd-9694-465e-a445-ff87052e235e.png)
 
 
 # Elastic Search
@@ -44,7 +44,7 @@
      
 - Elasticsearch is standing as a NOSQL DB that store data as document type.
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/482f5abb-1d03-418c-a6f0-468734280553)
+  ![image](/images/276821893-482f5abb-1d03-418c-a6f0-468734280553.png)
 
 - Index
 
@@ -64,42 +64,42 @@
 
     This data type is used to store full text like product description. These fields participate in full-text search. These type of fields are analyzed while storing which enables to searching these fields by the individual word in it. These type of fields are not used in sorting and aggregation queries.
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/07249449-603f-481d-a521-67b8b2e33daf)
+  ![image](/images/276823599-07249449-603f-481d-a521-67b8b2e33daf.png)
 
 
 - Keywords
 
     This type is also used to store text data but unlike Text, it is not analyzed and stored as-is. This is suitable to store information like a user’s mobile number, city, age, etc. These fields are used in filter, aggregation and sorting queries. For e.g. list all users from a particular city, filter by their age.
 
-    ![image](https://github.com/jil1710/readmedemo/assets/125335932/056fa496-1734-45e2-89eb-f9acc9df42c4)
+    ![image](/images/276823981-056fa496-1734-45e2-89eb-f9acc9df42c4.png)
 
 
 - Numeric
 
   Elasticsearch supports a wide range of numeric type long, integer, short, byte, double, float.
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/6499525d-39ea-48d6-aa32-c52aa91f3745)
+  ![image](/images/276824372-6499525d-39ea-48d6-aa32-c52aa91f3745.png)
 
 
 - Boolean & Data
 
   Elastic Search also support boolean and date type data to store boolean and date object.
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/8ebdd520-719b-40c7-b8cc-44529d67ff92)
+  ![image](/images/276824944-8ebdd520-719b-40c7-b8cc-44529d67ff92.png)
   
 
 - Object
 
   If you know JSON well, this is not a new concept. Elasticsearch also allows storing nested JSON object structure as a document.
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/db792faa-6e87-43e0-8714-fefdfe6b77a2)
+  ![image](/images/276824645-db792faa-6e87-43e0-8714-fefdfe6b77a2.png)
 
 
 - Nested
 
     The Object data type is not that useful due to its underlying data representation in the Lucene index. Lucene index does not support inner JSON object. ES flattens the original JSON to make it compatible to store in Lucene index. Due to this fields of the multiple inner objects get merged into one leading to wrong search results. Most of the time what you may want to use is Nested Datatype over Object.
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/7b072896-ef01-4d7a-9d4e-2c09cfe6fa6c)
+  ![image](/images/276824669-7b072896-ef01-4d7a-9d4e-2c09cfe6fa6c.png)
 
 
 - Geo Point
@@ -114,16 +114,16 @@
 
 - **Example : Look below index :**
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/1df890d9-d4d3-4a36-a166-878c9bc91d90)
+  ![image](/images/276822999-1df890d9-d4d3-4a36-a166-878c9bc91d90.png)
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/41ef854a-d683-4b67-a1d4-200300b2ed31)
+  ![image](/images/276823351-41ef854a-d683-4b67-a1d4-200300b2ed31.png)
 
 
 ## Let's implement Elastic Search using ASP.Net Core integration.
 
 - First of all Download and Install Elasticsearch. You can download it from [here](https://www.elastic.co/downloads/elasticsearch). Once you downloaded Elasticsearch zip file, extract it and run `\bin\elasticsearch.bat`. After running this file, you should be able to browse https://localhost:9200. You can use this as your Elasticsearch server. You will also get your username, password, and other necessary information that you have to use in ASP.NET Core middleware.
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/5771f18f-9fe3-43e3-9380-9d5c643636ac)
+  ![image](/images/276828583-5771f18f-9fe3-43e3-9380-9d5c643636ac.png)
 
 - Now Install the below nuget package in order to cummunicate with elastic search server. Nest is a strongly typed interface to Elasticsearch. Fluent and classic object initializer mappings of requests and responses.
 
@@ -143,47 +143,47 @@
   ```
   - Create one extention method that configure the elastic search setting and connection to create index and document.
  
-    ![image](https://github.com/jil1710/readmedemo/assets/125335932/63fc3cdf-ac18-4d3f-bc5a-c0df3f5d148b)
+    ![image](/images/276832389-63fc3cdf-ac18-4d3f-bc5a-c0df3f5d148b.png)
 
   - Add this to Service collection to register the `IElasticClient` into DI container.
  
-    ![image](https://github.com/jil1710/readmedemo/assets/125335932/a6b64282-3054-44bb-8f88-abfa691e0165)
+    ![image](/images/276832645-a6b64282-3054-44bb-8f88-abfa691e0165.png)
 
  - We have Seed 300000 Customer data into Elastic Search to analysing and visulization of data we use kibana. It is a dashboard for practicing the elastic search such as create, delete index, mapping the index with type, insert, delete, update, read the document into particular index etc...
 
  - You can download kibana from [here](https://www.elastic.co/downloads/kibana). Once you download kibana zip file, extract it and run `\bin\kibana.bat`. After running this file it will give url to open dashboard once you click on this url it will ask for `enrollment token`. You get this token when you run `elasticsearch.bat` file below username nad password section. Just copy and paste into kibana dashboard after validation token it will ask for username and password. enter same below username and password. now you are ready to go. Go to `Dev Tool` to execute end points like create, delete, get etc..
 
-   ![image](https://github.com/jil1710/readmedemo/assets/125335932/5771f18f-9fe3-43e3-9380-9d5c643636ac)
+   ![image](/images/276828583-5771f18f-9fe3-43e3-9380-9d5c643636ac.png)
 
 - **Search Customer by it's name into customer index**
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/03748038-a0fe-4cd8-865e-6bc0ff9cf7b2)
+  ![image](/images/276837652-03748038-a0fe-4cd8-865e-6bc0ff9cf7b2.png)
 
 - **Search Customer by Account Type [ Saving, Fixed, Current ]**
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/92ca6354-b205-4737-a9df-ead806aaedf9)
+  ![image](/images/276836368-92ca6354-b205-4737-a9df-ead806aaedf9.png)
 
  - **Let's Perform CRUD operation on elastic search index**
 
    - Create model CRUD
 
-     ![image](https://github.com/jil1710/readmedemo/assets/125335932/0607f2e9-69ce-4c27-bc99-be01ca682fe4)
+     ![image](/images/276836644-0607f2e9-69ce-4c27-bc99-be01ca682fe4.png)
 
    - Insert data document into elastic search index with name crud.
 
-     ![image](https://github.com/jil1710/readmedemo/assets/125335932/98eeed94-e5a7-47b1-97f1-b527b580ca31)
+     ![image](/images/276837043-98eeed94-e5a7-47b1-97f1-b527b580ca31.png)
 
    - Delete document from crud index
   
-     ![image](https://github.com/jil1710/readmedemo/assets/125335932/b3227ac7-f0d9-4b78-84f8-46ce01865c18)
+     ![image](/images/276837845-b3227ac7-f0d9-4b78-84f8-46ce01865c18.png)
 
    - Update document of crud index
   
-     ![image](https://github.com/jil1710/readmedemo/assets/125335932/a3b28d1f-6ec8-46c1-aaa2-90d35846174b)
+     ![image](/images/276837941-a3b28d1f-6ec8-46c1-aaa2-90d35846174b.png)
 
    - Read document by id from crud index
 
-     ![image](https://github.com/jil1710/readmedemo/assets/125335932/2079b872-4e6f-4677-9131-c86ade053745)
+     ![image](/images/276838036-2079b872-4e6f-4677-9131-c86ade053745.png)
 
 
 
